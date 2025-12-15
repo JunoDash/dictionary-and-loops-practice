@@ -43,11 +43,18 @@ import student_data
 
 # print(student_data.students)
 students = student_data.students
-print(len(students))
+print(len(students)) # What is being counted
 print(students[0]['Combo,Name'])
 print(students[0]['Email'][0])
 print(students[0]['Email'][1])
+print(students[0]['FName'])
+print(students[0]['MName'])
+print(students[0]['HR'])
 
+print(students[1]['Combo,Name'])
+print(students[1]['GL'])
+
+print(students[2]['Email'])
 # What is being counted?
 
 # If the output is 36, what does that tell you?
@@ -68,12 +75,29 @@ print(students[0]['Email'][1])
 #and printing the name and email of the students
 #we are also printing a line of underscores to separate the students
 #we are also printing a line of underscores to separate the students
-for student in students:
-    print(student['Combo,Name'])
-    print(student['Email'][0])
-    print(student['Email'][1])
-    print("_"*25)
+# for student in students:
+#     print(student['CPSID'])
+#     print(student['Combo,Name'])
+#     print(student['Email'][0])
+#     print(student['Email'][1])
+#     print(student['HR'])
+#     print(student['GL'])
+#     print("_"*25)
 
+# # make each have reduced lunch
+
+# for student in students:
+#     student.update({'LunchStatus': 'Reduced'})
+#     print(student['LunchStatus'])
+#     print("_"*25)
+
+# #Off campus lunch
+
+# for student in students:
+#     if student['GL'] >= 10:
+#         student.update({'offcampus': 'True'})
+#     else:
+#         student.update({'offcampus': 'False'})
 # What does the loop variable student represent on each pass?
 
 # How many times will this loop run?
@@ -88,12 +112,17 @@ for student in students:
 # we are asking the user to input their name
 # then we are checking if the name is in the data
 # if the name is in the data we are printing the name and "this works"
-name = input("what is you name?") 
-for student in students:
-    if name == student['Combo,Name']:
-        print(student['Combo,Name'])
-        print("this works")
+# name = input("what is you name? ") 
+# for student in students:
+#     if name == student['Combo,Name']:
+#         print(student['Combo,Name'])
+#         print("this works")
 
+Id = input("Enter your CPS ID: ")
+for student in students:
+    if Id == student['CPSID']:
+        print(student['CPSID'])
+        print("working")
 # What is the goal of this search?
 
 # What happens if the name is not found?
