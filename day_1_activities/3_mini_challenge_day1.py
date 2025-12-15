@@ -37,24 +37,57 @@
     #    - Primary Email
     #    - Secondary Email
 
+from student_data import students
+
+data = {
+    "FName": None,
+    "LName": None,
+    "MName": None,
+    "HR": None,
+}
+
+for key in data:
+    data[key] = input(f"{key}: ") 
+
+data["CPSID"] = int(input("CPSID: "))
+
+for student in students:
+    if student["CPSID"] == data["CPSID"]:
+        print("CPSID already exists in the system!")
+        exit()
+
+data["GL"] = int(input("GL: "))
+
+data["Email"] = [
+    input("email 1: "),
+    input("email 2: "),
+]
+
 # 2. Combine the First and Last name into this format:
     #    "Last, First"  
+
+data["Combo,Name"] = f"{data["LName"]}, {data["FName"]}"
 
 # 3. Store all of the new information into ONE dictionary
     #    that matches the structure of the existing student data.
 
+# we already did this
+
 # 4. Add (append) that new dictionary into the main students list.
+
+students.append(data)
 
 # 5. After adding the student, the program must:
     #    - Print a confirmation message
     #    - Print the total number of students in the system
     #    - Print the newly added student record
 
+print("Successfully added student to system")
+print(f"Total number of students in system: {len(students)}")
+print(f"New student record: {data}")
+
 # 6. The program must NOT delete or overwrite any existing students.
 
 # 7. If the CPS ID already exists in the system:
         #    - Do NOT add the student
         #    - Display an error message saying the CPS ID is already taken
-
-
-
